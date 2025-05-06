@@ -45,6 +45,21 @@ dfs(set(), graph, start_node)
 print("\n\nBreadth-First Search (BFS):")
 bfs(graph, start_node)
 
+# Enter the number of nodes in the graph: 5
+# Enter the edges (e.g., '0 1' for an edge between 0 and 1). Type 'done' to finish:
+# 0 1
+# 0 2
+# 1 3
+# 1 4
+# done
+# Enter the starting node: 0
+
+# Depth-First Search (DFS):
+# 0 1 3 4 2
+
+# Breadth-First Search (BFS):
+# 0 1 2 3 4
+
 # ## 🧠 **Basic Viva Questions**
 # ### 1. **What is Depth First Search (DFS)?**
 # DFS is a graph traversal algorithm that explores as far as possible along one branch before backtracking.
