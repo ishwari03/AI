@@ -65,3 +65,40 @@ if start not in graph or goal not in graph:
     print("Invalid start or goal node.")
 else:
     a_star(start, goal, graph, heuristic)
+
+
+Enter all node names (space-separated): A B C D E
+Enter number of edges: 5
+Enter each edge in the format: from to weight
+A B 1.0
+A C 2.0
+B D 2.0
+C D 1.0
+D E 3.0
+Enter heuristic values for each node (example: A 3.5):
+Heuristic for A: 4.0
+Heuristic for B: 3.0
+Heuristic for C: 2.0
+Heuristic for D: 1.0
+Heuristic for E: 0.0
+Enter START node: A
+Enter GOAL node: E
+
+Path found: A -> C -> D -> E
+
+
+Enter all node names (space-separated): A B C D
+Enter number of edges: 3
+Enter each edge in the format: from to weight
+A B 1.0
+B C 2.0
+C D 1.0
+Enter heuristic values for each node (example: A 3.5):
+Heuristic for A: 3.0
+Heuristic for B: 2.0
+Heuristic for C: 1.0
+Heuristic for D: 0.0
+Enter START node: A
+Enter GOAL node: E
+
+Invalid start or goal node.
