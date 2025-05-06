@@ -16,18 +16,24 @@ def prims_algorithm_adj_list(adj_list, n):
     min_heap = [(0, 0)]  # (weight, vertex)
     total_weight = 0
     mst_edges = []
+    parent = {}  # To track the parent of each node
 
     while min_heap:
         weight, u = heapq.heappop(min_heap)
         if visited[u]:
             continue
+        # print(f"Visiting node {u} with edge weight {weight}")
         visited[u] = True
         total_weight += weight
+
+        if u in parent:
+            mst_edges.append((parent[u], u, weight))  # Add the actual MST edge
+
         for v, w in adj_list[u]:
             if not visited[v]:
                 heapq.heappush(min_heap, (w, v))
-                if weight != 0:
-                    mst_edges.append((u, v, w))
+                parent[v] = u  # Track the edge used to reach v
+               
 
     print("Edges in MST (Prim's):", mst_edges)
     print("Total MST cost (Prim's):", total_weight)
@@ -61,6 +67,21 @@ while True:
     else:
         print("Invalid choice. Try again.")
 
+
+# Enter your choice: 2
+# Enter number of vertices: 4
+# Enter number of edges: 5
+# Enter edge (u v weight): 0 1 1
+# Enter edge (u v weight): 0 2 4
+# Enter edge (u v weight): 1 2 2
+# Enter edge (u v weight): 1 3 6
+# Enter edge (u v weight): 2 3 3
+# Edges in MST (Prim's): [(0, 1, 1), (1, 2, 2), (2, 3, 3)]      
+# Total MST cost (Prim's): 6
+
+# Enter your choice: 1
+# Enter array elements (space-separated): 27 13 44 16 20
+# Sorted array: [13, 16, 20, 27, 44]
 
 # ### 🧠 **General Questions**
 
